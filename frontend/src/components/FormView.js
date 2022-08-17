@@ -10,7 +10,7 @@ class FormView extends Component {
       answer: '',
       difficulty: 1,
       category: 1,
-      categories: {},
+       categories: {},
     };
   }
 
@@ -20,6 +20,7 @@ class FormView extends Component {
       type: 'GET',
       success: (result) => {
         this.setState({ categories: result.categories });
+        if(result === "no_errors") {window.location.href = "http://127.0.0.1:3000/questions"}
         return;
       },
       error: (error) => {
